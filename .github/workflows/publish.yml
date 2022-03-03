@@ -37,12 +37,6 @@ jobs:
         id: assemble
         if: always()
         run: ./gradlew app:assembleRelease
-      - name: Archive Apk
-        uses: actions/upload-artifact@v2
-        with:
-          name: release-apk
-          path: |
-            app/build/outputs/apk/**/*.apk
       - name: Archive mapping
         uses: actions/upload-artifact@v2
         with:
