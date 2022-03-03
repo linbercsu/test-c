@@ -36,12 +36,14 @@ jobs:
       - name: Assemble
         id: assemble
         if: always()
-        run: ./gradlew app:assembleDebug
+        run: ./gradlew app:assembleRelease
       - name: Archive Apk
         uses: actions/upload-artifact@v2
         with:
           name: release-apk
           path: |
             app/build/outputs/apk/**/*.apk
+            app/build/outputs/mapping/**/*.txt
+
 
 
